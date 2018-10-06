@@ -1,0 +1,32 @@
+.game-container {
+  background-color: #C26868;
+  width: 100%;
+  height: 100vh;
+  display: block;
+}
+
+.game-content {
+  width: 80%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.info-section {
+  width: 100%;
+  height: 30%;
+}
+
+.game-section {
+  width: 100%;
+  height: 70%;
+}
+
+@media only screen and (max-width: 768px) {
+  .game-section {
+    width: 90%;
+  }
+}
