@@ -1,8 +1,21 @@
 .card-container {
   width: 100%;
-  height: 10vh;
+  height: 100px;
   box-sizing: border-box;
   border: 1px solid skyblue;
   border-radius: 5px;
   cursor: pointer;
+  background-color: lightcyan;
+
+  img {
+    height: 90%;
+    object-fit: contain;
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
 }
