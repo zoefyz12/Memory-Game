@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
 import Card from '../card/card';
+import ReactCountdownClock from 'react-countdown-clock';
 
 import './game.scss';
 
 class Game extends Component {
-
-    // state = {
-    //     cardGrid: null,
-    //     timeLimit: 0
-    // };
 
     constructor(props) {
         super(props);
@@ -38,35 +34,49 @@ class Game extends Component {
         this.props.resetGame();
     };
 
+    timeFinished = () => {
+
+    };
+
     render() {
 
         console.log(this.state.cardGrid)
         return (
             <div className='game-container'>
-                {/*<button onClick={this.resetGame}>Reset</button>*/}
 
                 <div className='game-content'>
 
-                    <div className='info-section'>
-
+                    <div className='timer-section'>
+                        <ReactCountdownClock seconds={this.state.timeLimit}
+                                             color="#42ebf4"
+                                             showMilliseconds={true}
+                                             size={100}
+                                             alpha={0.6}
+                                             onComplete={this.timeFinished} />
                     </div>
 
                     <div className='game-section'>
 
-                        <div className='row'>
-                            {
-                                this.state.cardGrid.map((val, index) => {
-                                    return val.map((val, index) => {
-                                        return (
-                                            <div className={'col-' + (12 / this.state.cardGrid.length).toString()}>
-                                                <Card/>
-                                            </div>
-                                        )
-                                    });
-                                })
-                            }
-                        </div>
+                        {
+                            this.state.cardGrid.map((val, index) => {
+                                return (
+                                    <div className='row mb-3'>
+                                        {val.map((val, index) => {
+                                            return (
+                                                <div className={'col-' + (12 / this.state.cardGrid.length).toString()}>
+                                                    <Card/>
+                                                </div>
+                                            )
+                                        })}
+                                    </div>
+                                )
+                            })
+                        }
 
+                    </div>
+
+                    <div className='btn-section'>
+                        <button className='btn-primary btn btn-block' onClick={this.resetGame}>Reset Game</button>
                     </div>
 
                 </div>
