@@ -14,9 +14,10 @@ const importAll = (r) => {
 // refer https://stackoverflow.com/questions/42118296/dynamically-import-images-from-a-directory-using-webpack
 const images = importAll(require.context('./../../assist/img', false, /\.(png|jpe?g|svg)$/));
 
-const card = ({cardInfo}) => {
+const card = ({cardInfo, onClick}) => {
     return (
-        <div className='card-container'>
+        <div className='card-container' style={{'transform': cardInfo.flip ? 'rotateY(180deg)' : 'rotateY(0deg)'}}
+             onClick={() => onClick(cardInfo.index)}>
             <img src={images[cardInfo.serialNum + '.svg']} alt='icon'/>
         </div>
     );

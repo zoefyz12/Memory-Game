@@ -7,6 +7,12 @@
   cursor: pointer;
   background-color: lightcyan;
 
+
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  transition: .5s;
+  -webkit-transition: .5s;
+
   img {
     height: 90%;
     object-fit: contain;
@@ -17,5 +23,10 @@
     top: 0;
     bottom: 0;
     margin: auto;
+
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
   }
 }

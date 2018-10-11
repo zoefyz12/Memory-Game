@@ -10,11 +10,11 @@ const gameDifficulty = {
         cardRow: 4
     },
     1: {
-        time: 90,
+        time: 120,
         cardRow: 6
     },
     2: {
-        time: 60,
+        time: 90,
         cardRow: 6
     }
 };
